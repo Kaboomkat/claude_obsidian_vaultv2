@@ -1,0 +1,50 @@
+Problemas no Daily:
+
+- Os botões dentro do Daily Journal para a Revisão da Manhã e Revisão da Noite estão quebrados, ergo: não estão criando uma página com o template Evening Review Template ou Morning Review Template.
+
+- Templates que estou falando: mandando link obsidian e raiz do sistema, é o mesmo arquivo.
+	- obsidian://open?vault=Ebook%20Claude&file=_templates%2Fdaily%2FMorning%20Review%20Template
+		- C:\Users\rodri\Obsidian\Ebook Claude\_templates\daily\Morning Review Template.md
+	- obsidian://open?vault=Ebook%20Claude&file=_templates%2Fdaily%2FEvening%20Review%20Template
+		- C:\Users\rodri\Obsidian\Ebook Claude\_templates\daily\Evening Review Template.md
+
+- A tabela "Estado do dia" dentro do template Daily Note Template não está sendo preenchida nos Reviews. Está ficando em branco.
+	- obsidian://open?vault=Ebook%20Claude&file=_templates%2Fdaily%2FDaily%20Note%20Template
+		- C:\Users\rodri\Obsidian\Ebook Claude\_templates\daily\Daily Note Template.md
+
+- Daily Dashboard:
+	- Botão "Abrir Diário de Hoje" apresenta erro
+	- "Entrada Recentes do Diário",  a tabela que track o humor e energia da manhã e da noite dos diários, que por sua vez cobrem o Review Manhã e Review Noite, está, sem nenhuma surpresa nisso, vazia, visto que o Daily Journal não consegue extrair os valores de energia e humor dos Reviews.
+
+
+- CustomJS
+	- Coloquei a pasta "_scripts" como a pasta contendo os scripts JS files para o CustomJS, só que a pasta encontra-se vazia no momento.	
+
+======================================================================================================================================================================
+
+Limitação Conhecida (fora do escopo)
+Mood-Energy Tracker (Year/Month/Week): lê mood_morning etc. do frontmatter dos daily notes, que estarão vazios. Já estava quebrado antes (por design incorreto). Será corrigido em v0.0.4 — precisará:
+
+Mudar queries para ler dos review files
+Adaptar o sistema de cores para índice 1-5 (emoji) em vez de 1-10 (numérico)
+
+======================================================================================================================================================================
+ 
+Verificação (end-to-end)
+
+Review via botão: Clicar "🔄 Revisão da Manhã" → arquivo em 03-Daily/Morning Reviews/ com frontmatter correto (data real, campo mood_morning: vazio aguardando emoji)
+Review via wikilink: Clicar link no daily note → mesmo resultado
+Preencher review: Editar frontmatter com mood_morning: 🙂 e energy_morning: 🔥
+Estado do Dia: Abrir daily note → tabela mostra os emojis preenchidos
+Daily Dashboard: "Abrir Diário de Hoje" funciona; "Entradas Recentes" mostra células coloridas com emojis
+Weekly Dashboard: Tabela "Humor & Energia" renderiza sem erro CustomJS; células coloridas com emojis; linha de média mostra emoji mais próximo
+
+=======================================================================================================================================================================
+
+Fazer no domingo 2 da tarde:
+
+Tá funcionando os botões de Criação do Review no Daily Dashboard
+
+Não tá funcionando direito dentro do Diário
+
+Botão de Criar/Abrir Diário no Daily Dashboard e Home não estão funcionando
