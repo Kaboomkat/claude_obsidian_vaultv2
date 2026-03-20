@@ -1,0 +1,13 @@
+{
+  "accentColor": "#3EB489",
+  "theme": "obsidian",
+  "cssTheme": "Minimal",
+  "baseFontSize": 19,
+  "enabledCssSnippets": [
+    "dashboard-cards",
+    "longform-tweaks",
+    "writing-mode"
+  ],
+  "interfaceFontFamily": "Baskerville",
+  "textFontFamily": "Baskerville"
+}
